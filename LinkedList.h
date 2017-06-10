@@ -29,11 +29,16 @@ class LinkedList {
         LinkedList() {
             head = NULL;
         };
+        
         void print() {
             Node *tmp = head;
-            cout << tmp->getData();
+            while (tmp->getNext() != NULL) {
+                cout << tmp->getData() << endl;
+                tmp = tmp->getNext();
+            };
         };
-        void add(int d) {
+        
+        void addNode(int d) {
             Node* n = new Node(d);
             Node *t = head;
             if (t != NULL) {
@@ -45,7 +50,8 @@ class LinkedList {
                 head = n;
             };
         };
-        void removeData(int d) {
+        
+        void removeNode(int d) {
             Node *t = head;
             Node *p = NULL;
             if (t != NULL) {
@@ -58,6 +64,7 @@ class LinkedList {
                 };
             };
         };
+        
         Node *getNode(int d) {
             Node *t = head;
             if (t != NULL) {
