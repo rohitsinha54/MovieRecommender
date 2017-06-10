@@ -45,4 +45,28 @@ class LinkedList {
                 head = n;
             };
         };
+        void removeData(int d) {
+            Node *t = head;
+            Node *p = NULL;
+            if (t != NULL) {
+                while (t->getData() != d) {
+                    t = t->getNext();
+                    p = t;
+                }
+                if (t->getData() == d) {
+                    p->setNext(t->getNext());
+                };
+            };
+        };
+        Node *getNode(int d) {
+            Node *t = head;
+            if (t != NULL) {
+                while (t->getData() != d) {
+                    t = t->getNext();
+                }
+                if (t->getData() == d) {
+                    return t;
+                };
+            };
+        };
 };
