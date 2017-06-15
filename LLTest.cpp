@@ -4,9 +4,9 @@ using namespace std;
 
 int main()
 {
-  cout << "hello";
   LinkedList ll;
   ll.addNode(123);
+  ll.addNode(133);
   ll.print();
   return 0;
 }
