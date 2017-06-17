@@ -18,7 +18,7 @@ void testMR() {
     mr1.addUserRating(2,3.3);
     mr1.printUserRatings();
     
-    // Test update methods
+    // Test update method
     mr1.updateRating();
     mr1.printData();
 }
@@ -33,10 +33,12 @@ void testIntNode() {
 }
 
 */
+
+// Test Linked List Class
 void testList() {
     List l;
-    l.insert(1,4.3);
-    l.insert(2,2.3);
+    l.insertNode(1,4.3);
+    l.insertNode(2,2.3);
     Node * n1 = l.getHead();
     n1->getData().printData();
     n1->getNext()->getData().printData();
@@ -60,8 +62,6 @@ void testMRNode() {
     MovieRating mr3 = MovieRating(3,3.1);
     n1->setData(mr3);
     n1->getData().printData();
-    
-    
 }
 
 

@@ -13,7 +13,7 @@ public :
         return head;
     }
 
-    void insert(int ID, double rating) {
+    void insertNode(int ID, double rating) {
         MovieRating mr = MovieRating(ID, rating);
         Node * n1 = new Node(mr);
         Node * c = head;
@@ -24,6 +24,34 @@ public :
             c->setNext(n1);
         } else {
             head = n1;
+        }
+    }
+    
+    void deleteNode(int ID) {
+        Node * c = head;
+        Node * p = head;
+        if (head != NULL) {
+            while (c->getNext() != NULL && c->getData().getID() != ID) {
+                p = c;
+                c = c->getNext();
+            }
+            if (c->getData().getID() == ID) {
+                p->setNext(c->getNext());
+            }
+        }
+    }
+    
+    Node* getNode(int ID) {
+        Node * c = head;
+        if (head != NULL) {
+            while (c->getNext() != NULL && c->getData().getID() != ID) {
+                c = c->getNext();
+            }
+            if (c->getData().getID() == ID) {
+                return c;
+            }
+        } else {
+            return NULL;
         }
     }
 };
