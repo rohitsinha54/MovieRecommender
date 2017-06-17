@@ -1,7 +1,7 @@
 #ifndef HEAP_H
 #define HEAP_H
 
-#include "Movies.h"
+#include "Movie.h"
 #include <vector>
 
 // VERY IMPORTANT!!!
