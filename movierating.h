@@ -1,12 +1,16 @@
 #ifndef MOVIERATING_H
 #define MOVIERATING_H
 
+#include <vector>
+#include "userrating.h"
+
 using namespace std;
 
 class MovieRating {
 private :
     int ID;
     double rating;
+    vector<UserRating> UR;
 public :
     MovieRating(int i, double d) {
         ID = i;
@@ -20,6 +24,14 @@ public :
     int getID() {
         return ID;
     }
+    
+    void updateRating() {
+        double d = 0;
+        for (int i = 0; i < UR.size(); i++) {
+            d += UR[i].getRating();
+        }
+        rating = d/UR.size();
+    }
 
     void setRating(double d) {
         rating = d;
@@ -27,6 +39,16 @@ public :
 
     double getRating() {
         return rating;
+    }
+    
+    void addUserRating(int ID, double rating) {
+        UR.push_back(UserRating(ID,rating));
+    }
+    
+    void printUserRatings() {
+        for (int i = 0; i < UR.size(); i++) {
+            UR[i].printData();
+        }
     }
 
     void printData() {

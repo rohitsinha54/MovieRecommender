@@ -12,6 +12,15 @@ void testMR() {
     mr2.setRating(2.4);
     mr1.printData();
     mr2.printData();
+    
+    // Test User Rating Array
+    mr1.addUserRating(1,2.3);
+    mr1.addUserRating(2,3.3);
+    mr1.printUserRatings();
+    
+    // Test update methods
+    mr1.updateRating();
+    mr1.printData();
 }
 
 /*
@@ -35,20 +44,30 @@ void testList() {
 
 // Test Node Class With Movie Rating Class
 void testMRNode() {
+    
+    // Test creation
     MovieRating mr1 = MovieRating(1,4.3);
     MovieRating mr2 = MovieRating(2,1.3);
     Node * n1 = new Node(mr1);
     Node * n2 = new Node(mr2);
     n1->getData().printData();
     n2->getData().printData();
+    
+    // Test setter methods
     n1->setNext(n2);
     cout << (n1->getNext() == n2) << endl;
+    
+    MovieRating mr3 = MovieRating(3,3.1);
+    n1->setData(mr3);
+    n1->getData().printData();
+    
+    
 }
 
 
 
 int main()
 {
-    testList();
+    testMR();
     return 0;
 }

@@ -13,6 +13,10 @@ public :
         data = d;
         next = NULL;
     }
+    
+    void setData(MovieRating d) {
+        data = d;
+    }
 
     MovieRating getData() {
         return data;
