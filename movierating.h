@@ -41,8 +41,8 @@ public :
         return rating;
     }
     
-    void addUserRating(int ID, double rating) {
-        UR.push_back(UserRating(ID,rating));
+    void addUserRating(UserRating r) {
+        UR.push_back(r);
     }
     
     void printUserRatings() {
@@ -52,7 +52,7 @@ public :
     }
 
     void printData() {
-        cout << ID << " : " << rating << endl;
+        cout << "\nMovie ID : " << ID << "\nRating : " << rating << endl;
     }
 };
 

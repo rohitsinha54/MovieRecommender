@@ -14,8 +14,8 @@ void testMR() {
     mr2.printData();
     
     // Test User Rating Array
-    mr1.addUserRating(1,2.3);
-    mr1.addUserRating(2,3.3);
+    mr1.addUserRating(UserRating(1,2.3));
+    mr1.addUserRating(UserRating(2,3.3));
     mr1.printUserRatings();
     
     // Test update method
@@ -37,11 +37,15 @@ void testIntNode() {
 // Test Linked List Class
 void testList() {
     List l;
-    l.insertNode(1,4.3);
-    l.insertNode(2,2.3);
+    l.insertNode(MovieRating(1,4.3));
+    l.insertNode(MovieRating(2,3.3));
     Node * n1 = l.getHead();
     n1->getData().printData();
     n1->getNext()->getData().printData();
+    
+    l.deleteNode(1);
+    Node * n2 = l.getHead();
+    n2->getData().printData();
 }
 
 // Test Node Class With Movie Rating Class

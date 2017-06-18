@@ -13,8 +13,7 @@ public :
         return head;
     }
 
-    void insertNode(int ID, double rating) {
-        MovieRating mr = MovieRating(ID, rating);
+    void insertNode(MovieRating mr) {
         Node * n1 = new Node(mr);
         Node * c = head;
         if (head != NULL) {
@@ -30,7 +29,9 @@ public :
     void deleteNode(int ID) {
         Node * c = head;
         Node * p = head;
-        if (head != NULL) {
+        if (head->getData().getID() == ID) {
+            head = head->getNext();
+        } else if (head != NULL) {
             while (c->getNext() != NULL && c->getData().getID() != ID) {
                 p = c;
                 c = c->getNext();

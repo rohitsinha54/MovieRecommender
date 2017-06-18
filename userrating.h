@@ -30,7 +30,7 @@ public :
     }
 
     void printData() {
-        cout << ID << " : " << rating << endl;
+        cout << "\nUser ID : " << ID << "\nRating : " << rating << endl;
     }
 };
 
