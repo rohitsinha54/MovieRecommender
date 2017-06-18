@@ -1,24 +1,30 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include "files.h"
-#include "heap.h"
-#include "Movie.h"
+/**
+ * Driver of the MovieRecommender application.
+ *
+ * @author Malgorzata Sklarek
+ */
 
-const string DATA_FILE = "movies.txt";
-const string WRITE_FILE = "writeMovies.txt";
-
-using namespace std;
+#include "File.h"
+#include "Movies.h"
+#include "UserRatings.h"
 
 int main() {
-	Files test;
-	Movie sort;
-	fstream testFile;
-	fstream wFile;
-	vector<string> movies;
-	// Testing...
-	test.getData(testFile, DATA_FILE);
-	test.writeFile(wFile, WRITE_FILE);
 
-	return 0;
+    // read the movies file
+    Movies movies;
+    movies.load("movies.csv");
+
+    // read the user rating files
+    UserRatings userRatings;
+    userRatings.load("ratings.csv", movies);
+
+    // ask user for movieId
+    long movieId;
+    cout << "Please enter the movieID whose average rating needs to be found: ";
+    cin >> movieId;
+
+    // display movie information
+    Movie m;
+    movies.getMovie(movieId, m);
+    cout << m << endl;
 }
