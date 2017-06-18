@@ -40,12 +40,13 @@ void testList() {
     l.insertNode(MovieRating(1,4.3));
     l.insertNode(MovieRating(2,3.3));
     Node * n1 = l.getHead();
-    n1->getData().printData();
-    n1->getNext()->getData().printData();
+    n1->printData();
+    n1->getNext()->printData();
     
     l.deleteNode(1);
     Node * n2 = l.getHead();
-    n2->getData().printData();
+    n2->printData();
+    l.printData();
 }
 
 // Test Node Class With Movie Rating Class
@@ -56,22 +57,21 @@ void testMRNode() {
     MovieRating mr2 = MovieRating(2,1.3);
     Node * n1 = new Node(mr1);
     Node * n2 = new Node(mr2);
-    n1->getData().printData();
-    n2->getData().printData();
+    n1->printData();
+    n2->printData();
     
     // Test setter methods
     n1->setNext(n2);
-    cout << (n1->getNext() == n2) << endl;
     
     MovieRating mr3 = MovieRating(3,3.1);
     n1->setData(mr3);
-    n1->getData().printData();
+    n1->printData();
 }
 
 
 
 int main()
 {
-    testMR();
+    testList();
     return 0;
 }

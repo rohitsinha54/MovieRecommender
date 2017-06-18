@@ -29,6 +29,11 @@ public :
     void setNext(Node* n) {
         next = n;
     }
+    
+    void printData() {
+        cout << "\nNode Data :";
+        data.printData();
+    }
 };
 
 

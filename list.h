@@ -55,6 +55,17 @@ public :
             return NULL;
         }
     }
+    
+    void printData() {
+        Node * c = head;
+        if (head != NULL) {
+            cout << "\nList Data :";
+            while (c != NULL) {
+                c->printData();
+                c = c->getNext();
+            }
+        }
+    }
 };
 
 #endif // LIST_H
