@@ -54,8 +54,11 @@ int main() {
             case 3:
                 cout << "Enter movie id: ";
                 cin >> mId;
-                movies.getMovie(mId, m);
-                cout << m << endl;
+                if(movies.getMovie(mId, m)) {
+                    cout << m << endl;
+                } else {
+                    cout << "Movie with id: " << mId << " not found" << endl;
+                }
                 break;
             case 4:
                 cout << "Enter number of top movies to display: ";
